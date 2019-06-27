@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Starbucksb2b_RequestCredit::request" title="Request Credit by Customer" action="starbucksb2b_requestcredit/request/index" module="Starbucksb2b_RequestCredit" sortOrder="90" parent="Magento_Sales::sales_operation" resource="Magento_Sales::sales_starbucksb2b_refund_request"/>
+        <add id="Starbucksb2b_RequestCredit::label" title="Request Credit Dropdown Options" action="starbucksb2b_requestcredit/label/index" module="Starbucksb2b_RequestCredit" sortOrder="100" parent="Magento_Sales::sales_operation" resource="Magento_Sales::sales_starbucksb2b_refund_request_label"/>
+    </menu>
+</config>

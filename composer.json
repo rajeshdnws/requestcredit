@@ -1,0 +1,24 @@
+{
+    "name": "starbucksb2b/request-credit",
+    "description": "Starbucksb2b Request Credit Module",
+    "type": "magento2-module",
+    "version": "1.0.3",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+	 "authors": [
+        {
+       "name": "giovanni",
+       "email": "giovanni.venegas@borngroup.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Starbucksb2b\\RequestCredit\\": ""
+        }
+    }
+}
