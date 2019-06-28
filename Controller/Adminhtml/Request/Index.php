@@ -1,6 +1,6 @@
 <?php
 /**
- * BSS Commerce Co.
+ * B2B Commerce Co.
  *
  * NOTICE OF LICENSE
  *
@@ -9,10 +9,10 @@
  * It is also available through the world-wide-web at this URL:
  * http://starbucksb2bcommerce.com/Starbucksb2b-Commerce-License.txt
  *
- * @category   BSS
+ * @category   B2B
  * @package    Starbucksb2b_RequestCredit
  * @author     Extension Team
- * @copyright  Copyright (c) 2017-2018 BSS Commerce Co. ( http://starbucksb2bcommerce.com )
+ * @copyright  Copyright (c) 2017-2018 B2B Commerce Co. ( http://starbucksb2bcommerce.com )
  * @license    http://starbucksb2bcommerce.com/Starbucksb2b-Commerce-License.txt
  */
 namespace Starbucksb2b\RequestCredit\Controller\Adminhtml\Request;

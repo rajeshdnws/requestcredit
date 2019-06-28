@@ -1,27 +1,4 @@
 <?php
-/**
- * Starbucksb2b Commerce Co.
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the EULA
- * that is bundled with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://starbucksb2bcommerce.com/Starbucksb2b-Commerce-License.txt
- *
- * @category   Starbucksb2b
- * @package    Starbucksb2b_RequestCredit
- * @author     Extension Team
- * @copyright  Copyright (c) 2017-2018 Starbucksb2b Commerce Co. ( http://starbucksb2bcommerce.com )
- * @license    http://starbucksb2bcommerce.com/Starbucksb2b-Commerce-License.txt
- */
-
-/**
- * @var $block \Starbucksb2b\RequestCredit\Block\Label
- */
-?>
-<?php // @codingStandardsIgnoreFile ?>
-<?php
 
     $refundStatus = json_encode($block->getRefundStatus()->getData());
     $orderRefund = json_encode($block->getOrderRefund());
@@ -30,9 +7,9 @@
 
 <?php if ($block->getConfigEnableModule()) { ?>
     <div id="starbucksb2b-refund-modal" style="display: none;">
-        <form action="http://localhost/m222/requestcredit/order/index" class="form refund" id="starbucksb2b-refund-form" method="post"
+        <form action="" class="form refund" id="starbucksb2b-refund-form" method="post"
               data-hasrequired="<?= $block->escapeHtml(__('* Required Fields')) ?>"
-              data-mage-init='{"validation":{}}'>
+              data-mage-init='{"validation":{}}' enctype="multipart/form-data">
             <fieldset class="fieldset">
                 <div class="control">
                     <?php $title = $block->getTitle(); ?>
@@ -82,6 +59,18 @@
                         </label>
                     </div>
                 </div>
+				
+				   <div class="field ">
+                    <label class="label" for="label"><span><?php echo  __('Upload file'); ?></span></label>
+                    <div class="control">
+                        <label>						
+                   <input name="starbucksb2b-image" id="starbucksb2b-image" class="admin__control-file" title="Image" value="" class="starbucksb2b-image input-file" type="file">
+
+                        </label>
+                    </div>
+                </div>
+<input class="btn btn-success starbucksb2b-popup-button" type="submit" value="Upload">
+
             </fieldset>
         </form>
     </div>

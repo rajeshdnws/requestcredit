@@ -1,6 +1,6 @@
 <?php
 /**
- * BSS Commerce Co.
+ * B2B Commerce Co.
  *
  * NOTICE OF LICENSE
  *
@@ -9,10 +9,10 @@
  * It is also available through the world-wide-web at this URL:
  * http://starbucksb2bcommerce.com/Starbucksb2b-Commerce-License.txt
  *
- * @category   BSS
+ * @category   B2B
  * @package    Starbucksb2b_RequestCredit
  * @author     Extension Team
- * @copyright  Copyright (c) 2017-2018 BSS Commerce Co. ( http://starbucksb2bcommerce.com )
+ * @copyright  Copyright (c) 2017-2018 B2B Commerce Co. ( http://starbucksb2bcommerce.com )
  * @license    http://starbucksb2bcommerce.com/Starbucksb2b-Commerce-License.txt
  */
 namespace Starbucksb2b\RequestCredit\Controller\Order;
@@ -24,7 +24,10 @@ use Magento\Framework\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Sales\Api\Data\OrderInterface;
 use Magento\Framework\Data\Form\FormKey\Validator;
-
+use Magento\Framework\App\Filesystem\DirectoryList;
+use Magento\Framework\Filesystem;
+use Magento\MediaStorage\Model\File\UploaderFactory;
+use Magento\Framework\Image\AdapterFactory;
 class Index extends \Magento\Framework\App\Action\Action
 {
     /**
@@ -61,7 +64,21 @@ class Index extends \Magento\Framework\App\Action\Action
      * @var \Magento\Framework\Data\Form\FormKey\Validator
      */
     protected $formKeyValidator;
-
+    
+    /**
+     * @var PageFactory
+     */
+    protected $UploaderFactory;
+	
+    /**
+     * @var PageFactory
+     */
+    protected $AdapterFactory;
+	
+    /**
+     * @var PageFactory
+     */
+    protected $filesystem;
     /**
      * Index constructor.
      * @param Email $emailSender
@@ -70,7 +87,10 @@ class Index extends \Magento\Framework\App\Action\Action
      * @param RequestFactory $requestFactory
      * @param Context $context
      * @param PageFactory $resultPageFactory
-     * @param Validator $formKeyValidator
+     * @param UploaderFactory $UploaderFactory
+	 * @param AdapterFactory $AdapterFactory
+	 * @param Filesystem $filesystem
+	 * @param Validator $formKeyValidator
      */
     public function __construct(
         Email $emailSender,
@@ -79,7 +99,10 @@ class Index extends \Magento\Framework\App\Action\Action
         RequestFactory $requestFactory,
         Context $context,
         PageFactory $resultPageFactory,
-        Validator $formKeyValidator
+        Validator $formKeyValidator,
+		UploaderFactory $uploaderFactory,
+        AdapterFactory $adapterFactory,
+        Filesystem $filesystem
     ) {
         $this->emailSender        = $emailSender;
         $this->helper             = $helper;
@@ -87,6 +110,9 @@ class Index extends \Magento\Framework\App\Action\Action
         $this->requestFactory    = $requestFactory;
         $this->resultPageFactory = $resultPageFactory;
         $this->formKeyValidator = $formKeyValidator;
+		$this->uploaderFactory = $uploaderFactory;
+        $this->adapterFactory = $adapterFactory;
+        $this->filesystem = $filesystem;
         parent::__construct($context);
     }
 
@@ -100,8 +126,40 @@ class Index extends \Magento\Framework\App\Action\Action
             $this->messageManager->addErrorMessage("Invalid request!");
             return $resultRedirect->setPath('customer/account/');
         }
-        $model          = $this->requestFactory->create();
-        $data           = $this->getRequest()->getPostValue();
+        $model= $this->requestFactory->create();
+        $data= $this->getRequest()->getPostValue();
+		echo $_FILES['starbucksb2b-image']['name'];die;
+		if(isset($_FILES['starbucksb2b-image']['name']) && $_FILES['starbucksb2b-image']['name'] != '') {
+		try{
+		$uploaderFactory = $this->uploaderFactory->create(['fileId' => 'starbucksb2b-image']);
+		$uploaderFactory->setAllowedExtensions(['jpg','png']);
+		$imageAdapter = $this->adapterFactory->create();
+		//$uploaderFactory->addValidateCallback('custom_image_upload',$imageAdapter,'validateUploadFile');
+		$uploaderFactory->setAllowRenameFiles(true);
+		$uploaderFactory->setFilesDispersion(true);
+		$mediaDirectory = $this->filesystem->getDirectoryRead(DirectoryList::MEDIA);
+		$destinationPath = $mediaDirectory->getAbsolutePath('starbucksb2b/requestcredit');
+		$result = $uploaderFactory->save($destinationPath);
+		if (!$result)
+			{
+		throw new LocalizedException(
+		__('File cannot be saved to path: $1', $destinationPath)
+		);
+		  $this->messageManager->addErrorMessage(__('File cannot be saved to path: $1', $destinationPath));
+            return $resultRedirect->setPath('customer/account/');
+		}
+		
+		$imagePath = 'starbucksb2b/requestcredit'.$result['file'];
+		$data['image'] = $imagePath;
+		} 
+		catch (\Exception $e)
+		{
+		$this->messageManager->addErrorMessage($e->getMessage());
+		$resultRedirect->setPath('customer/account/');
+		return $resultRedirect;
+		}
+			
+		}
         if ($data) {
             if ($this->helper->getConfigEnableDropdown()) {
                 $option = $data['starbucksb2b-option'];

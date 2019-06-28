@@ -1,22 +1,4 @@
 <?xml version="1.0"?>
-<!--
-/**
- * BSS Commerce Co.
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the EULA
- * that is bundled with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://starbucksb2bcommerce.com/Starbucksb2b-Commerce-License.txt
- *
- * @category   Starbucksb2b
- * @package    Starbucksb2b_RequestCredit
- * @author     Extension Team
- * @copyright  Copyright (c) 2017-2018 Starbucksb2b Commerce Co. ( http://starbucksb2bcommerce.com )
- * @license    http://starbucksb2bcommerce.com/Starbucksb2b-Commerce-License.txt
- */
--->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Config\Controller\Adminhtml\System\Config\Save">

@@ -8,74 +8,74 @@ use Magento\Customer\Model\Session as CustomerSession;
 class Data extends AbstractHelper
 {
     /**
-     * BSS_CONFIG_ENABLE_MODULE
+     * B2B_CONFIG_ENABLE_MODULE
      */
-    const BSS_CONFIG_ENABLE_MODULE = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_general/enable';
+    const B2B_CONFIG_ENABLE_MODULE = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_general/enable';
 
     /**
-     * BSS_CONFIG_ORDER_REFUND
+     * B2B_CONFIG_ORDER_REFUND
      */
-    const BSS_CONFIG_ORDER_REFUND = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_general/canrefund';
+    const B2B_CONFIG_ORDER_REFUND = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_general/canrefund';
 
     /**
-     * BSS_CONFIG_TITLE_POPUP
+     * B2B_CONFIG_TITLE_POPUP
      */
-    const BSS_CONFIG_POPUP_TITLE = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_config/popup_title';
+    const B2B_CONFIG_POPUP_TITLE = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_config/popup_title';
 
     /**
-     * BSS_CONFIG_ENABLE_DROPDOWN
+     * B2B_CONFIG_ENABLE_DROPDOWN
      */
-    const BSS_CONFIG_ENABLE_DROPDOWN = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_config/enable_dropdown';
+    const B2B_CONFIG_ENABLE_DROPDOWN = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_config/enable_dropdown';
 
     /**
-     * BSS_CONFIG_DROPDOWN_TITLE
+     * B2B_CONFIG_DROPDOWN_TITLE
      */
-    const BSS_CONFIG_DROPDOWN_TITLE = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_config/dropdown_title';
+    const B2B_CONFIG_DROPDOWN_TITLE = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_config/dropdown_title';
 
     /**
-     * BSS_CONFIG_ENABLE_OPTION
+     * B2B_CONFIG_ENABLE_OPTION
      */
-    const BSS_CONFIG_ENABLE_OPTION = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_config/enable_option';
+    const B2B_CONFIG_ENABLE_OPTION = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_config/enable_option';
 
     /**
-     * BSS_CONFIG_OPTION_TITLE
+     * B2B_CONFIG_OPTION_TITLE
      */
-    const BSS_CONFIG_OPTION_TITLE = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_config/option_title';
+    const B2B_CONFIG_OPTION_TITLE = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_config/option_title';
 
     /**
-     * BSS_CONFIG_DETAIL_TITLE
+     * B2B_CONFIG_DETAIL_TITLE
      */
-    const BSS_CONFIG_DETAIL_TITLE = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_config/detail_title';
+    const B2B_CONFIG_DETAIL_TITLE = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_config/detail_title';
 
     /**
-     * BSS_CONFIG_TITLE
+     * B2B_CONFIG_TITLE
      */
-    const BSS_CONFIG_TITLE = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_config/title';
+    const B2B_CONFIG_TITLE = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_config/title';
 
     /**
-     * BSS_CONFIG_ADMIN_EMAIL
+     * B2B_CONFIG_ADMIN_EMAIL
      */
-    const BSS_CONFIG_ADMIN_EMAIL = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_email_config/admin_email';
+    const B2B_CONFIG_ADMIN_EMAIL = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_email_config/admin_email';
 
     /**
-     * BSS_CONFIG_EMAIL_TEMPLATE
+     * B2B_CONFIG_EMAIL_TEMPLATE
      */
-    const BSS_CONFIG_EMAIL_TEMPLATE = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_email_config/email_template';
+    const B2B_CONFIG_EMAIL_TEMPLATE = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_email_config/email_template';
 
     /**
-     * BSS_CONFIG_EMAIL_SENDER
+     * B2B_CONFIG_EMAIL_SENDER
      */
-    const BSS_CONFIG_EMAIL_SENDER = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_email_config/email_sender';
+    const B2B_CONFIG_EMAIL_SENDER = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_email_config/email_sender';
 
     /**
-     * BSS_CONFIG_ACCEPT_EMAIL
+     * B2B_CONFIG_ACCEPT_EMAIL
      */
-    const BSS_CONFIG_ACCEPT_EMAIL = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_email_config/accept_email';
+    const B2B_CONFIG_ACCEPT_EMAIL = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_email_config/accept_email';
 
     /**
-     * BSS_CONFIG_REJECT_EMAIL
+     * B2B_CONFIG_REJECT_EMAIL
      */
-    const BSS_CONFIG_REJECT_EMAIL = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_email_config/reject_email';
+    const B2B_CONFIG_REJECT_EMAIL = 'starbucksb2b_requestcredit/starbucksb2b_requestcredit_email_config/reject_email';
 
     /**
      * ScopeConfigInterface
@@ -121,7 +121,7 @@ class Data extends AbstractHelper
     public function getConfigEnableModule()
     {
         return $this->scopeConfig->getValue(
-            self::BSS_CONFIG_ENABLE_MODULE,
+            self::B2B_CONFIG_ENABLE_MODULE,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -132,7 +132,7 @@ class Data extends AbstractHelper
     public function getOrderRefund()
     {
         return $this->scopeConfig->getValue(
-            self::BSS_CONFIG_ORDER_REFUND,
+            self::B2B_CONFIG_ORDER_REFUND,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -144,7 +144,7 @@ class Data extends AbstractHelper
     public function getTitle()
     {
         return $this->scopeConfig->getValue(
-            self::BSS_CONFIG_TITLE,
+            self::B2B_CONFIG_TITLE,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -156,7 +156,7 @@ class Data extends AbstractHelper
     public function getPopupModuleTitle()
     {
         return $this->scopeConfig->getValue(
-            self::BSS_CONFIG_POPUP_TITLE,
+            self::B2B_CONFIG_POPUP_TITLE,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -168,7 +168,7 @@ class Data extends AbstractHelper
     public function getConfigEnableDropdown()
     {
         return $this->scopeConfig->getValue(
-            self::BSS_CONFIG_ENABLE_DROPDOWN,
+            self::B2B_CONFIG_ENABLE_DROPDOWN,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -180,7 +180,7 @@ class Data extends AbstractHelper
     public function getDropdownTitle()
     {
         return $this->scopeConfig->getValue(
-            self::BSS_CONFIG_DROPDOWN_TITLE,
+            self::B2B_CONFIG_DROPDOWN_TITLE,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -192,7 +192,7 @@ class Data extends AbstractHelper
     public function getConfigEnableOption()
     {
         return $this->scopeConfig->getValue(
-            self::BSS_CONFIG_ENABLE_OPTION,
+            self::B2B_CONFIG_ENABLE_OPTION,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -204,7 +204,7 @@ class Data extends AbstractHelper
     public function getOptionTitle()
     {
         return $this->scopeConfig->getValue(
-            self::BSS_CONFIG_OPTION_TITLE,
+            self::B2B_CONFIG_OPTION_TITLE,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -216,7 +216,7 @@ class Data extends AbstractHelper
     public function getDetailTitle()
     {
         return $this->scopeConfig->getValue(
-            self::BSS_CONFIG_DETAIL_TITLE,
+            self::B2B_CONFIG_DETAIL_TITLE,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -227,7 +227,7 @@ class Data extends AbstractHelper
     public function getAdminEmail()
     {
         return $this->scopeConfig->getValue(
-            self::BSS_CONFIG_ADMIN_EMAIL,
+            self::B2B_CONFIG_ADMIN_EMAIL,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -238,7 +238,7 @@ class Data extends AbstractHelper
     public function getEmailTemplate()
     {
         return $this->scopeConfig->getValue(
-            self::BSS_CONFIG_EMAIL_TEMPLATE,
+            self::B2B_CONFIG_EMAIL_TEMPLATE,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -249,7 +249,7 @@ class Data extends AbstractHelper
     public function configSenderEmail()
     {
         return $this->scopeConfig->getValue(
-            self::BSS_CONFIG_EMAIL_SENDER,
+            self::B2B_CONFIG_EMAIL_SENDER,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -260,7 +260,7 @@ class Data extends AbstractHelper
     public function getRejectEmailTemplate()
     {
         return $this->scopeConfig->getValue(
-            self::BSS_CONFIG_REJECT_EMAIL,
+            self::B2B_CONFIG_REJECT_EMAIL,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -271,7 +271,7 @@ class Data extends AbstractHelper
     public function getAcceptEmailTemplate()
     {
         return $this->scopeConfig->getValue(
-            self::BSS_CONFIG_ACCEPT_EMAIL,
+            self::B2B_CONFIG_ACCEPT_EMAIL,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }

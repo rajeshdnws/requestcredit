@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
-    <template id="starbucksb2b_requestcredit_starbucksb2b_requestcredit_email_config_email_template" label="Notify Email Template" file="starbucksb2b_admin_refund_request_email.html" type="html" module="Starbucksb2b_RequestCredit" area="frontend"/>
+    <template id="starbucksb2b_requestcredit_starbucksb2b_requestcredit_email_config_email_template" label="Notify Email Template" file="starbucksb2b_admin_request_credit_email.html" type="html" module="Starbucksb2b_RequestCredit" area="frontend"/>
     <template id="starbucksb2b_requestcredit_starbucksb2b_requestcredit_email_config_accept_email" label="Accept Email Template" file="accept_email.html" type="html" module="Starbucksb2b_RequestCredit" area="frontend"/>
     <template id="starbucksb2b_requestcredit_starbucksb2b_requestcredit_email_config_reject_email" label="Reject Email Template" file="reject_email.html" type="html" module="Starbucksb2b_RequestCredit" area="frontend"/>
 </config>
